@@ -1,7 +1,8 @@
 # AI Email Reply Generator
 
 A simple web app that generates AI-powered email replies using Streamlit (frontend) and FastAPI (backend) with Google Gemini API. 
-[NEW: copy response, summarize original recieved email!]
+
+[ **NEW:** copy response, summarize original recieved email! ]
 
 ## Requirements
 
