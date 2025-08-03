@@ -36,6 +36,10 @@ A simple web app that generates AI-powered email replies using Streamlit (fronte
    ```bash
    uvicorn main:app --reload
    ```
+   If you see an error like `[Errno 98] Address already in use`, stop any running server or use a different port:
+   ```bash
+   uvicorn main:app --reload --port 8001
+   ```
 6. In a new terminal, start the Streamlit frontend:
    ```bash
    streamlit run app.py
@@ -45,5 +49,9 @@ A simple web app that generates AI-powered email replies using Streamlit (fronte
 - Open the Streamlit app in your browser (usually at http://localhost:8501)
 - Enter the email subject, received email, your role, and preferred tone
 - Click "Generate Reply" to get an AI-generated response
+
+## Notes
+- The backend uses the Gemini model: `models/gemini-2.5-pro` for best results.
+- If you get a 500 error from the frontend, make sure your backend is running and your Google API key is valid.
 
 ---

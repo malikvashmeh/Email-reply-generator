@@ -1,4 +1,3 @@
-
 import os
 from dotenv import load_dotenv
 import google.generativeai as genai
@@ -6,10 +5,10 @@ import google.generativeai as genai
 load_dotenv()
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
-
 class GeminiReplyGenerator:
     def __init__(self):
-        self.model = genai.GenerativeModel("models/gemini-1.0-pro")
+        # Using the latest stable, high-quality model for text generation
+        self.model = genai.GenerativeModel("models/gemini-2.5-pro")
 
     def generate_reply(self, email: str, role: str, tone: str) -> str:
         prompt = f"""
@@ -23,3 +22,14 @@ Write a clear, professional reply that matches the tone and role. Keep it approp
         response = self.model.generate_content(prompt)
         return response.text.strip()
 
+
+# model name check
+if __name__ == '__main__':
+    print('Script started. Attempting to list Gemini models...')
+    try:
+        models = genai.list_models()
+        print('Available models:')
+        for model in models:
+            print(f"- {getattr(model, 'name', repr(model))}")
+    except Exception as e:
+        print('Error while listing models:', e)
