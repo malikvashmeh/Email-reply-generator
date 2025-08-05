@@ -15,8 +15,6 @@ app.add_middleware(CORSMiddleware,
     allow_headers=["*"],
 )
 
-
-
 class EmailRequest(BaseModel):
     email: str
     role: str

@@ -8,7 +8,7 @@ genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 class GeminiReplyGenerator:
     def __init__(self):
         # Using the latest stable, high-quality model for text generation
-        self.model = genai.GenerativeModel("models/gemini-2.5-pro")
+        self.model = genai.GenerativeModel("models/gemini-2.5-flash")
 
     def generate_reply(self, email: str, role: str, tone: str) -> str:
         prompt = f"""
@@ -25,7 +25,7 @@ Write a clear, professional reply that matches the tone and role. Keep it approp
 
 # model name check
 if __name__ == '__main__':
-    print('Script started. Attempting to list Gemini models...')
+    print('Attempting to list Gemini models...')
     try:
         models = genai.list_models()
         print('Available models:')
