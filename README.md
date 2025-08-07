@@ -53,7 +53,6 @@ A simple web app that generates AI-powered email replies using Streamlit (fronte
 - Click "Generate Reply" to get an AI-generated response
 
 ## Notes
-- The backend uses the Gemini model: `models/gemini-2.5-pro` for best results.
 - If you get a 500 error from the frontend, make sure your backend is running and your Google API key is valid.
 
 ---
